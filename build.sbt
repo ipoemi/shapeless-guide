@@ -1,3 +1,4 @@
+val scalaReflect = "org.scala-lang" % "scala-reflect"
 val macroParadise = compilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 val kindProjector = compilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4")
 val shapeless = "com.chuusai" %% "shapeless" % "2.3.2"
@@ -20,6 +21,7 @@ lazy val root = (project in file(".")).
       "-language:_"
     ),
     libraryDependencies ++= Seq(
+      scalaReflect % scalaVersion.value,
       shapeless, macroParadise, kindProjector,
       scalaCheck % Test, scalaTest % Test
     )

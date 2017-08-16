@@ -8,7 +8,7 @@ object Chapter04 extends App {
   def getRepr[A](value: A)(implicit gen: Generic[A]) =
     gen.to(value)
 
-  def showType[A](value: A)(implicit ct: TypeTag[A]) = println(ct.tpe.toString)
+  def showType[A](value: A)(implicit ct: TypeTag[A]): Unit = println(ct.tpe.toString)
 
   case class Vec(x: Int, y: Int)
 
